@@ -118,3 +118,42 @@ and transparent estimation methodology:
 | seasonal_mult | float | JNTO-derived seasonal demand multiplier |
 | base_price | float | Normalized 1.0 baseline price (USD) |
 | final_price | float | Final price after all adjustments (USD) |
+
+---
+
+## Known Limitations
+
+**Uniform price volatility across months**
+The synthetic data applies consistent random variance (±12%) across all
+records regardless of season, resulting in a nearly identical coefficient
+of variation (~0.21) for every month. Real pricing data would show
+meaningfully higher volatility during peak demand periods (cherry blossom,
+Golden Week) due to inventory scarcity, dynamic pricing responses, and
+competitor reactions. This limitation is worth noting when interpreting
+Query 05 seasonal volatility results.
+
+**Carrier pricing assumptions**
+JAL and ANA are seeded slightly higher than US carriers in the base price
+dictionary. Real observed data shows carrier pricing is mixed — Japanese
+carriers are sometimes cheaper on direct routes due to higher frequency
+and inventory. This affects the airline ranking patterns visible in
+Query 03.
+
+**Estimated prices for indirect routes**
+Where direct pricing data was unavailable for specific carrier and route
+combinations (particularly US carriers to Osaka), prices were estimated
+based on typical connecting fare premiums rather than observed fares. A
+production model would source all prices from live fare data.
+
+**Western traveler demand adjustment**
+Seasonal multipliers were adjusted beyond raw JNTO visitor data to account
+for Western traveler demand patterns. That adjustment was based on domain
+knowledge and judgment rather than a separate data source. A production
+model would validate this against actual booking data segmented by
+traveler origin country.
+
+**Booking window distribution**
+Booking windows are randomly distributed between 7 and 180 days, producing
+a thin last-minute bucket (191 flights vs 2,592 early bird bookings). Real
+booking behavior skews differently by route, season, and traveler type and
+would require behavioral data to model accurately.
