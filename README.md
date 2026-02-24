@@ -1,7 +1,7 @@
 # 🇯🇵 Japan Flight Pricing Intelligence
 
 A pricing analytics tool analyzing flight price volatility, seasonal demand 
-patterns, and optimal booking windows for Tokyo, Osaka, and Kyoto routes — 
+patterns, and optimal booking windows for Tokyo (HND/NRT) and Osaka (KIX) destinations from United States origin airports New York (JFK), Los Angeles (LAX), San Francisco (SFO), Chicago (ORD), Seattle (SEA) — 
 featuring an AI-powered pricing briefing for travel analysts.
 
 ---
@@ -18,9 +18,21 @@ intelligence briefings.
 
 ## 🗾 Destinations Covered
 
-- **Tokyo** (Narita/Haneda) — High-demand business and culture hub
-- **Osaka** (Kansai) — Food, nightlife, and value travel destination  
-- **Kyoto** — Traditional Japan, temples, and seasonal foliage
+### Japan Airports
+| Airport | Code | City | Notes |
+|---------|------|------|-------|
+| Tokyo Haneda | HND | Tokyo | Closer to city center, higher competition, slightly lower fares |
+| Tokyo Narita | NRT | Tokyo | Higher volume, more budget carriers, slightly higher fares |
+| Kansai International | KIX | Osaka | Gateway to Osaka, fewer direct US routes = higher fares |
+
+### US Origin Airports
+| Airport | Code | City | Notes |
+|---------|------|------|-------|
+| John F. Kennedy | JFK | New York | Longest haul, highest base fares |
+| Los Angeles Intl | LAX | Los Angeles | Most direct routes, strongest competition, lowest base fares |
+| San Francisco Intl | SFO | San Francisco | Similar to LAX with slight premium |
+| O'Hare Intl | ORD | Chicago | Limited direct routing, East Coast pricing |
+| Seattle-Tacoma | SEA | Seattle | Short Pacific crossing, competitive fares |
 
 ---
 
