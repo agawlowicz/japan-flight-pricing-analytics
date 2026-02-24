@@ -34,4 +34,4 @@ SELECT
     COUNT(*)                    AS num_flights
 FROM 'data/japan_flight_prices.csv'
 GROUP BY origin, destination
-ORDER BY avg_price DESC
+ORDER BY avg_price DESC;
