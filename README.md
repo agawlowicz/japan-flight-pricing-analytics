@@ -40,10 +40,10 @@ intelligence briefings.
 
 | Season | Period | Demand Level | Notes |
 |--------|--------|-------------|-------|
-| Cherry Blossom | March–April | 🔴 Peak | Highest price volatility |
-| Golden Week | Late April–May | 🔴 Peak | Domestic + international overlap |
-| Summer | July–August | 🟡 Moderate | High heat reduces Western demand |
+| Spring Peak | March–May | 🔴 Peak | Cherry blossom season transitions directly into Golden Week — one continuous high demand window with the highest price volatility and liability exposure |
 | Fall Foliage | October–November | 🟠 High | Second peak season |
+| Summer | July–August | 🟡 Moderate | High heat reduces Western demand |
+| Shoulder | June, September | 🟡 Moderate | Rainy season dip in June, mild recovery in September |
 | Winter | December–February | 🟢 Low–Moderate | Niche appeal — onsens, snow monkeys |
 
 ---

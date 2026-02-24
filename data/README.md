@@ -123,14 +123,21 @@ and transparent estimation methodology:
 
 ## Known Limitations
 
-**Uniform price volatility across months**
+**Uniform price volatility across months and seasons**
 The synthetic data applies consistent random variance (±12%) across all
-records regardless of season, resulting in a nearly identical coefficient
-of variation (~0.21) for every month. Real pricing data would show
-meaningfully higher volatility during peak demand periods (cherry blossom,
-Golden Week) due to inventory scarcity, dynamic pricing responses, and
-competitor reactions. This limitation is worth noting when interpreting
-Query 05 seasonal volatility results.
+records regardless of month or season, resulting in a nearly identical
+coefficient of variation (~0.21) for every month. Real pricing data would
+show meaningfully higher volatility during peak demand periods due to
+inventory scarcity, dynamic pricing responses, and competitor reactions.
+This uniform volatility has two notable effects on query results: Query 05
+seasonal volatility shows artificially similar volatility across all months
+with January surfacing as most volatile due to random noise rather than
+true demand patterns, and Query 10 Price Freeze risk scores show Winter
+segments appearing in the top 20 risk rankings despite being intuitively
+lower risk. In production data, peak season volatility would be
+significantly higher, which would push Winter segments out of the top
+risk tier and surface cherry blossom and Golden Week segments as dominant
+risk exposure by a wider margin.
 
 **Carrier pricing assumptions**
 JAL and ANA are seeded slightly higher than US carriers in the base price

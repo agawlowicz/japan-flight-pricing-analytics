@@ -24,7 +24,7 @@ Key Concepts:
     - ORDER BY on a CASE expression for logical sort order
 
 Expected Insight:
-    Cherry blossom season (March/April) and Golden Week (May)
+    Spring Peak with Cherry Blossom season and Golden Week (March-May)
     should show the largest premium over off-peak months.
     The dollar gap should be significant enough to make a
     compelling case for flexible date products. Fall foliage
@@ -34,13 +34,12 @@ Expected Insight:
 
 SELECT
     CASE
-        WHEN month IN (3, 4)        THEN '1. Cherry Blossom (Mar-Apr)'
-        WHEN month = 5              THEN '2. Golden Week (May)'
-        WHEN month IN (10, 11)      THEN '3. Fall Foliage (Oct-Nov)'
-        WHEN month IN (7, 8)        THEN '4. Summer (Jul-Aug)'
-        WHEN month IN (12, 1, 2)    THEN '5. Winter (Dec-Feb)'
-        ELSE                             '6. Shoulder (Jun, Sep)'
-    END                                             AS season,
+            WHEN month IN (3, 4, 5)     THEN '1. Spring Peak (Mar-May)'
+            WHEN month IN (10, 11)      THEN '2. Fall Foliage (Oct-Nov)'
+            WHEN month IN (7, 8)        THEN '3. Summer (Jul-Aug)'
+            WHEN month IN (12, 1, 2)    THEN '4. Winter (Dec-Feb)'
+            ELSE                             '5. Shoulder (Jun, Sep)'
+        END                             AS season,
     ROUND(AVG(final_price), 2)                      AS avg_price,
     ROUND(MIN(final_price), 2)                      AS min_price,
     ROUND(MAX(final_price), 2)                      AS max_price,

@@ -27,10 +27,10 @@ Key Concepts:
 Expected Insight:
     Peak months like April and March should show the highest
     absolute price volatility (stddev) due to wide price ranges.
-    However ordering by coefficient of variation may surface
-    surprising results — shoulder months with moderate average
-    prices but inconsistent demand may prove more relatively
-    unpredictable than peak months. High coefficient of variation
+    However ordering by volatility (coefficient of variation) 
+    may surface surprising results — shoulder months with moderate 
+    average prices but inconsistent demand may prove more 
+    relatively unpredictable than peak months. High volatility
     months represent the greatest liability risk for Price Freeze
     products, as the range of prices the platform may need to
     honor is hardest to predict.
@@ -44,7 +44,7 @@ SELECT
     ROUND(MIN(final_price), 2)                            AS min_price,
     ROUND(MAX(final_price), 2)                            AS max_price,
     ROUND(MAX(final_price) - MIN(final_price), 2)         AS price_range,
-    ROUND(STDDEV(final_price) / AVG(final_price), 4)      AS coeff_of_variation
+    ROUND(STDDEV(final_price) / AVG(final_price), 4)      AS volatility
 FROM 'data/japan_flight_prices.csv'
 GROUP BY month, month_name
 ORDER BY coeff_of_variation DESC;
