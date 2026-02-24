@@ -1,3 +1,31 @@
+"""
+generate_data.py
+----------------
+Generates a synthetic Japan flight pricing dataset for analytical modeling.
+
+Data Sources:
+    - Base prices: Observed economy fares from Google Flights, Expedia,
+      Kayak, and Momondo (February 2026)
+    - Seasonal multipliers: JNTO 2024 monthly visitor arrival statistics
+      https://statistics.jnto.go.jp/en/graph/
+
+Methodology:
+    - Base prices normalized to 1.0 seasonal baseline via seasonal deflation
+      (True Baseline = Observed February Price ÷ 0.85)
+    - Seasonal multipliers applied to baseline prices
+    - Random variance (±12%) simulates real-world price fluctuation
+    - Booking window adjustments reflect early/late booking premiums
+
+Output:
+    - data/japan_flight_prices.csv
+    - 5,000 flight records spanning 2023-2024
+    - 11 columns covering route, airline, timing, and pricing data
+
+Author note:
+    Synthetic data generation mirrors how data teams prototype pricing
+    models before production pipelines are available.
+"""
+
 import pandas as pd
 import numpy as np
 import random
