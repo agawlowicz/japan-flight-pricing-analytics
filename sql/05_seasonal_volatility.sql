@@ -19,7 +19,7 @@ Why It Matters:
     Freeze confidently without unexpected liability exposure.
 
 Key Concepts:
-    - STDDEV() window function for price volatility measurement
+    - STDDEV() aggregate function for price volatility measurement
     - Coefficient of variation (stddev / avg) for normalized
       volatility comparison across months with different averages
     - Combining multiple aggregations to tell a richer story
@@ -47,4 +47,4 @@ SELECT
     ROUND(STDDEV(final_price) / AVG(final_price), 4)      AS volatility
 FROM 'data/japan_flight_prices.csv'
 GROUP BY month, month_name
-ORDER BY coeff_of_variation DESC;
+ORDER BY volatility DESC;
