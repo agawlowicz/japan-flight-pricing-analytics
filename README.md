@@ -128,8 +128,26 @@ decisions.
 
 ## 🤖 Development Notes
 
-This project was developed using AI-assisted workflows, including Claude 
-(Anthropic) for project architecture and documentation, and the OpenAI API 
-for the pricing insights generation layer. This reflects the AI-augmented 
-analytics approach central to modern travel fintech platforms — and mirrors 
-the kind of work this project was built to demonstrate.
+This project was developed using AI-assisted workflows, including Claude
+(Anthropic) as a development partner and the OpenAI API for the pricing
+insights generation layer. This reflects the AI-augmented analytics approach
+central to modern travel fintech platforms — and mirrors the kind of work
+this project was built to demonstrate.
+
+Using AI as a tool doesn't mean stepping back from the work — it means
+engaging with it more deeply. Every methodology decision in this project
+was interrogated, debated, and sometimes pushed back on. The seasonal
+multiplier approach was grounded in real JNTO visitor data and adjusted
+based on domain knowledge from personal travel experience. The Price Freeze
+risk model went through multiple iterations — including rejecting a formula
+that incorporated average price after recognizing it didn't correctly reflect
+how platform liability actually works. The coefficient of variation was
+renamed to volatility for business clarity. Season buckets were redesigned
+mid-project after recognizing that cherry blossom season and Golden Week
+form one continuous demand window rather than two distinct periods.
+
+AI accelerated the building. The thinking, the questioning, and the judgment
+calls were human throughout. I believe strongly in keeping a human in the
+loop — not as a rubber stamp, but as an active critical voice that challenges
+assumptions, catches errors, and ensures the analysis tells an honest and
+defensible story.
